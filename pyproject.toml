@@ -1,0 +1,18 @@
+[project]
+name = "mychatgpt"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Levi0805",email = "leanhkiet08052002@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "openai (>=1.59.5,<2.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
