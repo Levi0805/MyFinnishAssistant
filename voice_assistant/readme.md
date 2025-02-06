@@ -1,25 +1,62 @@
-## Prerequirement
-- .env file alwaye replace GEMINI_API_KEY your personal key
+# 🗣️ MyFinnishAssistant - AI Voice & Text Assistant
+
+MyFinnishAssistant is an AI-powered voice and text assistant that can:
+- 🎤 Recognize speech and provide AI-generated responses.
+- ✍️ Answer typed questions using the Gemini AI model.
+- 📸 Describe uploaded images using AI.
+- 🔊 Convert text responses to speech.
+
+---
+
+## 🚀 Features
+1. **Text Mode** - Type a question and get an AI-generated response.
+2. **Voice Mode** - Speak a question, and the assistant will respond with text and speech.
+3. **Image Mode** - Upload an image and get a detailed description.
+4. **Exit Option** - Quit the program anytime.
+
+---
+
+## 📥 Installation
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/MyFinnishAssistant.git
+cd MyFinnishAssistant/voice_assistant
+
+2️⃣ Install Dependencies
 - pip install python-dotenv
 - pip install google-generativeai
 - pip install sounddevice numpy vosk pyttsx3
 - python voice.py
 - pip install pillow
 
+3️⃣ Download Vosk Speech Model
+MyFinnishAssistant/
+│── voice_assistant/
+│   ├── main.py
+│   ├── vosk-model-small-en-us-0.15/
+│   ├── .env
+│   ├── requirements.txt
 
-## How its work
-✅ Offline Speech Recognition → Uses vosk (works without an internet connection)
-✅ Accurate AI Responses → Uses Gemini AI for generating answers
-✅ Text-to-Speech → Uses pyttsx3 for speaking responses
+4️⃣ Set Up API Key
+GEMINI_API_KEY=your_google_generative_ai_key
 
-## 🎯 How This output 
-- When you run the script, it asks:
-- "Speak a question" (Option 1) → Uses voice input + Gemini AI
-- "Upload an image" (Option 2) → Asks for an image file and describes it
-- If you choose an image, it:
-- Loads the image
-- Asks Gemini AI to describe it
-- Prints & speaks the description
+🏃‍♂️ Running the Assistant
+python main.py
 
+📜 License
+This project is licensed under the MIT License
+
+
+💡 Future Improvements
+🔍 Add PDF summarization feature.
+🎭 Support multiple languages.
+📊 Improve speech recognition accuracy.
+🔍 Add chat History feature
+🔍 Add emotional sentiments 
+
+
+👨‍💻 Author
+Developed by [Rachna Kuamr, Levi, Hua Chen]
 
 
