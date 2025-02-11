@@ -18,7 +18,7 @@ if not api_key:
     raise ValueError("API key not found. Make sure it's set in the .env file.")
 
 # Configure Gemini API
-genai.configure(api_key=api_key)
+genai.configure(api_key=api_key)    
 
 # Initialize model
 model = genai.GenerativeModel("gemini-1.5-flash")

@@ -47,6 +47,51 @@ python main.py
 📜 License
 This project is licensed under the MIT License
 
+## MyChatProject 
+Description
+
+- MyChatProject is a Django-based web application designed to support a chat functionality.
+- The project follows the - standard Django structure and includes a chat app to handle messaging-related features.
+
+## Folder Structure
+voice_assistant/
+│
+├── mychatproject/
+│   ├── chat/
+│   │   ├── templates/       # Contains HTML templates
+│   │   ├── __init__.py      # Marks chat as a Python package
+│   │   ├── admin.py         # Admin panel configurations
+│   │   ├── apps.py          # Chat app configuration
+│   │   ├── forms.py         # Django forms for chat-related inputs
+│   │   ├── models.py        # Database models for chat app
+│   │   ├── tests.py         # Unit tests for the chat app
+│   │   ├── urls.py          # URL routing for chat-related views
+│   │   ├── views.py         # Views handling chat logic
+│   │
+│   ├── mychatproject/
+│   │   ├── __pycache__/     # Compiled Python files
+│   │   ├── __init__.py      # Marks mychatproject as a Python package
+│   │   ├── asgi.py          # ASGI configuration
+│   │   ├── settings.py      # Django settings
+│   │   ├── urls.py          # Main URL configurations
+│   │   ├── wsgi.py          # WSGI configuration
+│
+├── db.sqlite3               # SQLite database file
+├── manage.py                # Django project management script
+├── vosk-model-small-en/      # Directory for speech recognition model
+├── .env                      # Environment variables file
+
+# Navigate to the project directory:
+- cd  mychatproject
+# Apply migrations:
+- python manage.py migrate
+# Run the development server:
+- python manage.py runserver
+
+## Usage
+
+- Open http://127.0.0.1:8000/ in a web browser to access   the chat application.
+
 
 💡 Future Improvements
 🔍 Add PDF summarization feature.
@@ -56,7 +101,11 @@ This project is licensed under the MIT License
 🔍 Add emotional sentiments 
 
 
-👨‍💻 Author
-Developed by [Rachna Kuamr, Levi, Hua Chen]
+👨‍💻 Authors
+
+Developed by [Rachna Kumar, Levi, Hua Chen].
+
+
+
 
 
