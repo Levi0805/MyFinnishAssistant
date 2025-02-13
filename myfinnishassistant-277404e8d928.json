@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "myfinnishassistant",
+  "private_key_id": "277404e8d928b3e83e6d20b4bf8386c12ee7065a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCzupF2X1cRIGK6\n90r4K6glKBz/TQnezTMmZE8uUfe0FFldZmNe+MQzFyYMNnJUwnaV8EG4B8kWqNd3\nv8adAszqGOBR8P2/dbSvjO+clhwe6byfVyPkAkORhnilcmPjmg3vZ+GFVmkR2uRF\naZBWaBGXltgdczY4HY1E+wGXFcnIMxPOMfae7RONAhuJZLLn5hnBVCPavsg5R+dj\n1IY0/UX3HI5xvzIcEj5MPEKrdU6UyoIhTDCW+pVA49E8s1QD30WczZE95Cu5rh/T\nbRMjW4nGNylgwdmjrNJ/l7vvith4gNI+mqPtR3eQ/380hrs+ngnfakwzpMO5n6vD\n+Ud3HsK5AgMBAAECggEAE8Kn+plJ49apNEA7LGT0ZD1wTruEIcxy2r49nGyjrNdt\n6eB3fXohbDKX2tDjqiEFU7/qIdctS0H+Cqr5pcqoh/Z7N1clNvc0ifaXY6J3bgip\n1eUJS6jaD/Z2bk5Q4DXQYWmM+JGDFNT5sw4DshRYFtAda8N+ixXosdRdHOTm3g1c\nJFYakHMf1Jh5dmk1G296aErKeT2ZpCmo91FQL7XIq7MzfusIRbtWh/tCghI7rVbR\nu0rRQjvZfmF6HKVohor1mrTcL+z1bHR3ZxzhFclBP25FP6CoPwf9gR17fsp8qAel\nh06IbbcMT75UY5c9759fv2E9UoVU/Q1h2KSmiQZ7PwKBgQDvfKaqhjJ+GkBAI1Qy\nKn4ZTniaeh9oJsNscztrvDfNcYlZjLYZcIx2L63O5Dq9FJ4acnz9VZxZ5qvFRZCH\nSnL/l/HGBdpwq31PQBiJ37MllC6SXDS1K/HFe25lxxK1gNHrD+Fd5HAZn4vVv8sI\nbQCysRSmxLrsISxVtC3e4x/njwKBgQDAHxXF1TNMpIocYl0MV/zDysP9V0++FsUs\nQ1Do1nX67e0xcbWUfrMWvgpgMLjKwI0TR/h7gCSYv5mt2KJSpoEtP/GPCpeMNttb\nL9KnsEGNnW9wNOQe2PaqkDJ7L8549qRiczPbI3Pwk4uRXtxdrgWace2F5H0/zfFy\nqUJ5xIJNNwKBgA+5YHwLyZ7r/FH5v9p3XcYtl8+UuyEsgmJJgppFRmivzrPZgE9V\nS3OrF79gztaBVwwnfjtn9pcUhSyzr5Sid8B+anp1Ae2p5NViQPo0fN+3xgMIGNHY\na8xqmUoHcxwFtEK5zTNL/2w/RIApUpxgA863v8JfYmKEnxOVe/mJchvTAoGATU20\nsw+gPpyOPfGOQyM8P4Pc7JkvKut6lt7XNXjlq/wETrrUN1XrtaDuB9pS4LItka6J\n2xeqohOmQH9EgUEiBRUPm2DFrdN82+oYNwUCu3q3lkyR5Z+jUOoIheyshZuodTyp\nhulzA0A7Dlk/Diqxcn2Y9yEDDKNPHbXhW6GoVG0CgYAiTlDyX/1MTkySBwMD0H+s\nEJcwcNsThGVpKqpaTRbyV1c2Mtk/pTyTpku97vekn9nPwZ4XlsEXdopsq+hk1m7v\nJ85GOvh9zhtp7u0n8aUIqDAT0W+cXDgC6XKn1Acdadjz/PJrSF0PjjhKGR8pqYhD\n49dfg2deNYn4K1yDEDw1vg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "my-finnish-assistant@myfinnishassistant.iam.gserviceaccount.com",
+  "client_id": "107647190658356568812",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/my-finnish-assistant%40myfinnishassistant.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
