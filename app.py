@@ -1,54 +1,76 @@
 import os
 from dotenv import load_dotenv
-import openai
-from promptlayer import PromptLayer
+from google import genai
+from google.genai import types
 
 # Load environment variables from .env file
 load_dotenv()
 
-# Retrieve API keys from the environment
-promptlayer_api_key = os.getenv("PROMPTLAYER_API_KEY")
-openai_api_key = os.getenv("OPENAI_API_KEY")
+# Set Google Cloud AI Platform credentials
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.getenv("GOOGLE_CREDENTIALS_JSON")
+project_id = os.getenv("PROJECT_ID")
 
-# Validate API keys
-if not promptlayer_api_key:
-    raise ValueError("PromptLayer API key not found. Please set PROMPTLAYER_API_KEY in your .env file.")
-if not openai_api_key:
-    raise ValueError("OpenAI API key not found. Please set OPENAI_API_KEY in your .env file.")
+# Validate environment variables
+if not project_id:
+    raise ValueError("Project ID not found. Please set PROJECT_ID in your .env file.")
 
-# Initialize PromptLayer client
-promptlayer_client = PromptLayer(api_key=promptlayer_api_key)
+# Function to Generate Response
+def get_gemini_response(user_input):
+    try:
+        # Initialize the GenAI Client
+        client = genai.Client(
+            vertexai=True,
+            project=project_id,
+            location="us-central1",
+        )
 
-# Set OpenAI API key
-openai.api_key = openai_api_key
+        # Model and User Prompt
+        model = "gemini-2.0-flash-001"
+        contents = [
+            types.Content(
+                role="user",
+                parts=[
+                    types.Part.from_text(text=user_input)
+                ]
+            )
+        ]
 
-# Greet the user and collect input
-user_input = input("Welcome to MyFinnishAssistant! How can I help?\n> ")
+        # Configuration for Response Generation
+        generate_content_config = types.GenerateContentConfig(
+            temperature=1,
+            top_p=0.95,
+            max_output_tokens=8192,
+            response_modalities=["TEXT"],
+            safety_settings=[
+                types.SafetySetting(category="HARM_CATEGORY_HATE_SPEECH", threshold="OFF"),
+                types.SafetySetting(category="HARM_CATEGORY_DANGEROUS_CONTENT", threshold="OFF"),
+                types.SafetySetting(category="HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold="OFF"),
+                types.SafetySetting(category="HARM_CATEGORY_HARASSMENT", threshold="OFF"),
+            ],
+        )
 
-# Fetch the PromptLayer template and handle errors
-try:
-    mychatgpt_prompt = promptlayer_client.templates.get("MyFinnishAssistant", {
-        "provider": "openai",
-        "input_variables": {
-            "question": user_input
-        }
-    })
-except Exception as e:
-    print(f"Error fetching template: {e}")
-    exit(1)
+        # Generate and Stream the Response
+        print("\nAssistant Response:")
+        for chunk in client.models.generate_content_stream(
+            model=model,
+            contents=contents,
+            config=generate_content_config,
+        ):
+            print(chunk.text, end="")
+        print()  # For a clean new line
+        
+    except Exception as e:
+        print(f"Error generating response: {e}")
+        exit(1)
 
-# Make the OpenAI request with PromptLayer tagging
-try:
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # Ensure you specify a model
-        messages=mychatgpt_prompt['llm_kwargs']['messages'],  # Pass messages from the template
-        pl_tags=["mychatgpt-dev"]  # Add PromptLayer tags
-    )
+# Main App Loop
+if __name__ == "__main__":
+    print("Welcome to MyFinnishAssistant! Type 'exit' to quit.")
+    while True:
+        user_input = input("\nYou: ")
+        if user_input.lower() == 'exit':
+            print("Goodbye!")
+            break
+        get_gemini_response(user_input)
 
-    # Print the assistant's response
-    print("\nAssistant Response:")
-    print(response['choices'][0]['message']['content'])
-except Exception as e:
-    print(f"Error generating response: {e}")
-    exit(1)
 
